@@ -1,0 +1,20 @@
+[
+  {
+    "namespace": "NativePdf",
+    "functions": [
+      {
+        "name": "generate",
+        "type": "function",
+        "description": "Genera el PDF nativo y devuelve los bytes",
+        "async": true,
+        "parameters": [
+          {
+            "name": "tabId",
+            "type": "integer",
+            "description": "El ID de la pestaña del mensaje"
+          }
+        ]
+      }
+    ]
+  }
+]
