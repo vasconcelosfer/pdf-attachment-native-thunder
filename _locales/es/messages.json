@@ -1,0 +1,29 @@
+{
+  "extensionName": {
+    "message": "Exportador PDF Nativo"
+  },
+  "extensionDescription": {
+    "message": "Exporta correos a PDF usando el motor nativo incluyendo adjuntos."
+  },
+  "buttonTitle": {
+    "message": "Guardar PDF"
+  },
+  "defaultFileName": {
+    "message": "correo"
+  },
+  "notificationSaved": {
+    "message": "PDF Guardado correctamente"
+  },
+  "statusGenerating": {
+    "message": "Generando PDF...",
+    "description": "Titulo de notificacion al iniciar"
+  },
+  "statusSaved": {
+    "message": "PDF Guardado Correctamente",
+    "description": "Titulo de notificacion al finalizar"
+  },
+  "statusError": {
+    "message": "Error al generar PDF",
+    "description": "Titulo de notificacion al fallar"
+  }
+}

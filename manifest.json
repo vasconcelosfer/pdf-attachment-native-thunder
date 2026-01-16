@@ -1,24 +1,34 @@
 {
   "manifest_version": 3,
-  "name": "Native PDF Export Final",
-  "version": "1.0",
-  "description": "Exportar correos a PDF usando motor nativo",
+  "name": "__MSG_extensionName__",
+  "version": "1.2",
+  "default_locale": "en",
+  "description": "__MSG_extensionDescription__",
   "browser_specific_settings": {
     "gecko": {
       "id": "native-pdf-final@arca.local",
       "strict_min_version": "115.0"
     }
   },
+  "icons": {
+    "16": "icons/icon.svg",
+    "32": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "64": "icons/icon.svg",
+    "128": "icons/icon.svg"
+  },
   "permissions": [
     "messagesRead",
     "downloads",
-    "accountsRead"
+    "accountsRead",
+    "activeTab",
+    "notifications"
   ],
   "background": {
     "scripts": ["worker/pdf-lib.min.js", "background.js"]
   },
   "message_display_action": {
-    "default_title": "Guardar PDF",
+    "default_title": "__MSG_buttonTitle__",
     "default_icon": "icons/icon.png"
   },
   "experiment_apis": {

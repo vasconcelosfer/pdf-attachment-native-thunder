@@ -1,0 +1,34 @@
+{
+  "extensionName": {
+    "message": "Native PDF Export",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Export emails to PDF using native engine embedding attachments.",
+    "description": "Description of the extension"
+  },
+  "buttonTitle": {
+    "message": "Save PDF",
+    "description": "Tooltip title for the button"
+  },
+  "defaultFileName": {
+    "message": "email",
+    "description": "Default filename if subject is empty"
+  },
+  "notificationSaved": {
+    "message": "PDF Saved successfully",
+    "description": "Notification message (optional)"
+  },
+  "statusGenerating": {
+    "message": "Generating PDF...",
+    "description": "Notification title when starting"
+  },
+  "statusSaved": {
+    "message": "PDF Saved Successfully",
+    "description": "Notification title when done"
+  },
+  "statusError": {
+    "message": "Error generating PDF",
+    "description": "Notification title on error"
+  }
+}
