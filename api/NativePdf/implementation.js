@@ -33,19 +33,19 @@ var NativePdf = class extends ExtensionCommon.ExtensionAPI {
               // --- A. OBTENER PESTAÑA ---
               const tabObject = context.extension.tabManager.get(tabId);
               if (!tabObject) throw new Error(`Tab ${tabId} no encontrada`);
+              console.log(">>> [nativePdf] Pestaña obtenida:", tabObject);
               const nativeTab = tabObject.nativeTab;
 
               // --- B. BUSCAR BROWSER ---
               let browser = null;
-              if (nativeTab.mode && nativeTab.mode.name === "mail3pane") {
-                  if (nativeTab.ownerGlobal && nativeTab.ownerGlobal.gFolderDisplay) {
-                      browser = nativeTab.ownerGlobal.gFolderDisplay.messageBrowser;
-                  }
-              } else if (nativeTab.mode && nativeTab.mode.name === "message") {
-                  browser = nativeTab.linkedBrowser;
+              if (!browser && nativeTab.messageBrowser) {
+                browser = nativeTab.messageBrowser;
+                console.log(">>> [nativePdf] Usando messageBrowser");
               }
-              if (!browser && nativeTab.messageBrowser) browser = nativeTab.messageBrowser;
-              if (!browser) browser = nativeTab.linkedBrowser;
+              if (!browser) {
+                console.log(">>> [nativePdf] Usando linkedBrowser");
+                browser = nativeTab.linkedBrowser;
+              }
               if (!browser) throw new Error("Browser no encontrado");
 
               // --- C. PREPARAR COMPONENTES (XPCOM) ---
