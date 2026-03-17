@@ -71,6 +71,26 @@ var NativePdf = class extends ExtensionCommon.ExtensionAPI {
               printSettings.printBGColors = true;
               printSettings.printBGImages = true;
 
+              // --- FIX FOR SCALING / TINY CONTENT ---
+              
+              // Disable automatic shrinking. 
+              // If true, wide tables or images will compress the whole document scale.
+              printSettings.shrinkToFit = false;
+              
+              // Force 100% scale
+              printSettings.scaling = 1.0;
+
+              // Set explicit paper size (A4)
+              printSettings.paperWidth = 210.0;
+              printSettings.paperHeight = 297.0;
+              printSettings.paperSizeUnit = Ci.nsIPrintSettings.kPaperSizeMillimeters || 1;
+
+              // Set reasonable margins (Values in inches by default in XPCOM)
+              printSettings.marginTop = 0.5;
+              printSettings.marginBottom = 0.5;
+              printSettings.marginLeft = 0.5;
+              printSettings.marginRight = 0.5;
+
               // --- D. ARCHIVO TEMPORAL ---
               const dirService = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties);
               const tempFile = dirService.get("TmpD", Ci.nsIFile);
